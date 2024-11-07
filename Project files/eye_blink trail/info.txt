@@ -1,0 +1,29 @@
+--  ----------------  ----------  ---------
+ 1  hackathon         2022-02-01  Madhan
+ 2  webinar           2022-03-03  Madhan
+ 3  webinar           2022-02-01  Madhan
+ 4  wimper            2022-03-03  Madhan
+ 5  cultural event    2022-03-03  Madhan
+ 6  hackathon         2022-02-01  Madhan
+ 7  ashwin            1999-07-07  Madhan
+ 8  cultural event    2000-07-15  Madhan
+ 9  cultural          2000-07-15  Madhan
+10  cultural fest 3   2000-07-16  Madhan
+11  webinar           2001-08-08  Madhan
+12  madhan            2022-03-03  Madhan
+13  aieur             2022-02-01  Madhan
+14  ewgh              2000-07-15  wrty
+15  ugadi             1999-07-07  madhan
+16  ugadi             1999-07-07  madhan
+17  ugadi             1999-07-07  madhan
+18  marriage          1999-07-07  malyadri
+19  marriage          1999-07-07  malyadri
+20  marriage          1999-07-07  malyadri
+21  marriage          1999-07-07  malyadri
+22  marriage          1999-07-07  malyadri
+23  marriage          1999-07-07  malyadri
+24  marriage          1999-07-07  malyadri
+25  marriage          1999-07-07  malyadri
+26  marriage          1999-07-07  malyadri
+27  devotional event  2022-03-03  meeravali
+--  ----------------  ----------  ---------
