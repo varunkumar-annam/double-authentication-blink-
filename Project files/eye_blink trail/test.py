@@ -230,20 +230,20 @@ def reset():
     return render_template('dashboard.html')
 @app.route('/register')
 def register():
-    face_class=face_check()
-    if face_class==1:
-        password1 = open("pass.txt", 'r')
-        pass_word = password1.read()
-        password1.close()
-        if blink() == pass_word:
-            im_collector()
-            train_data()
-            k=blink()
-            f=open("pass.txt","w")
-            f.write(k)
-            f.close()
+    # face_class=face_check()
+    # if face_class==1:
+    password1 = open("pass.txt", 'r')
+    pass_word = password1.read()
+    password1.close()
+    # if blink() == pass_word:
+    im_collector()
+    train_data()
+    # k=blink()
+    # f=open("pass.txt","w")
+    # f.write(k)
+    # f.close()
     flash("oops! something went wrong try again!")
-    return render_template('index.html')
+    return render_template('register.html')
 
 @app.route('/auth')
 def auth():
