@@ -1,0 +1,94 @@
+<style>
+.img-responsive{
+height:200px;
+width:auto;
+}
+img{
+height:200px;
+width:200px;
+}
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+
+.button{
+  background-color: #43A6C6;
+  border : none;
+  border-radius : 4px;
+  padding : 15px 32px;
+  text-align : center;
+  text-decoration : none;
+  display : inline-block;
+  font-size : 16px;
+  margin : 4px 2px;
+  cursor : pointer;
+
+}
+.button1{
+  float: left;
+  color: #43A6C6;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+.button2{
+  float: left;
+  top-margin: 0px;
+  color: #43A6C6;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+.button3{
+  float: left;
+  color: #43A6C6;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+</style>
+
+<div class="topnav">
+  <form method="POST" action="/dash">
+    <div>
+        <button name="button" type="submit" class="button1" >Home </button>  </div>
+  </form>
+
+
+
+
+</div>
+<div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <span>{{ message }}</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</div>
+<div align="center">
+<form method="GET" action="/data">
+<div>
+        <button name="button" type="submit" value="1" class="button">Show Details </button>  </div>
+</form>
+<form method="GET" action="/fill">
+<div>
+        <button name="button" type="submit" value="2" class="button">Enter new details </button>  </div>
+</form>
+    </form>
+<form method="GET" action="/reset">
+<div align="center">
+        <button name="button" type="submit" value="3" class="button">Reset </button>  </div>
+</form>
+        </div>
+
+

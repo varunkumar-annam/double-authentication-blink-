@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+body{
+padding:0;
+margin:0;
+color:#fff;
+background:linear-gradient(90deg,#3e32a8,#e310c7);
+background-size:cover;
+background-position:relative;
+}
+
+.button1{
+margin-top:70%;
+border:none;
+outline:none;
+height:40px;
+background:rgba(0,0,0,0.4);
+color:#fff;
+font-size:18px;
+border-radius:20px;
+width:100%;
+cursor:pointer;
+
+}
+.button1:hover{
+box-shadow:0 5px 50px 0 #e310c7 inset, 0 2px 20px 0 #3e32a8,0 2px 20px 0 #3e32a8 inset, 0 5px 20px 0 #3e32a8;
+
+
+}
+
+.Box{
+width:300px;
+height:400px;
+padding:20px;
+background:rgba(0,0,0,0.4);
+color:#fff;
+top:50%;
+left:50%;
+position:absolute;
+transform:translate(-50%,-50%);
+box-sizing:border-box;
+}
+.try{
+width:200px;
+height:150px;
+border-radius:10%;
+position:absolute;
+margin-left:30px;
+margin-top:20px;
+}
+
+
+</style>
+<body>
+<h1 align="center">ENTERED CREDENTIALS WERE WRONG!</h1>
+<div class="Box">
+<img src="https://ichef.bbci.co.uk/images/ic/640x360/p06kykq2.jpg" class ="try">
+<br>
+<form method="GET" action="/auth">
+<div align="center">
+        <button name="button" type="submit" value="2" class="button1">TRY AGAIN </button>  </div>
+
+</form>
+</div>
+</body>
+</html>
