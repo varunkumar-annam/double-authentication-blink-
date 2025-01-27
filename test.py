@@ -270,38 +270,10 @@ def dash():
         return render_template('dashboard.html')
 
 
-print("hiiii")
-
-
-# @app.route('/fill', methods=['GET', 'POST'])
-# def fill():
-
-#     if request.method == 'POST':
-#         # Fetch form data
-#         userDetails = request.form
-
-#         event = userDetails['event']
-#         dt = userDetails['dt']
-#         orga = userDetails['organizer']
-#         cur = mysql.connection.cursor()
-#         cur.execute("INSERT INTO events(event, dt, organizer) VALUES(%s, %s,%s)",(event, dt, orga))
-#         mysql.connection.commit()
-#         cur.close()
-#         return render_template('succes.html')
-#     return render_template('fill.html')
 
 
 
-# @app.route('/data')
-# def users():
-#     cur = mysql.connection.cursor()
-#     resultValue = cur.execute("SELECT * FROM events")
-#     if resultValue > 0:
-#         userDetails = cur.fetchall()
-#         with open("info.txt", "w") as outputfile:
-#             outputfile.write(tabulate(userDetails))
 
-#         return render_template('data.html',userDetails=userDetails)
 
 
 
