@@ -1,206 +1,144 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Register Page</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            color: #fff;
-            background: url('images.jpg') no-repeat center center/cover;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-
-        .Box {
-            width: 300px;
-            height: auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.4);
-            color: #fff;
-            box-sizing: border-box;
-            border-radius: 10px;
-            text-align: center;
-            position: relative;
-            margin-left: 20px;
-        }
-
-        .avature {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .logo {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            margin: 20px auto;
-            display: block;
-            border-radius: 10%;
-        }
-
-        h1 {
-            margin: 20px 0;
-            font-size: 24px;
-        }
-
-        .button1 {
-            border: none;
-            outline: none;
-            height: 40px;
-            background: rgba(0, 0, 0, 0.4);
-            color: #fff;
-            font-size: 18px;
-            border-radius: 20px;
-            width: 100%;
-            cursor: pointer;
-            margin: 10px 0;
-            transition: box-shadow 0.3s;
-        }
-
-        .button1:hover {
-            box-shadow: 0 5px 50px 0 #e310c7 inset, 0 2px 20px 0 #3e32a8, 0 2px 20px 0 #3e32a8 inset, 0 5px 20px 0 #3e32a8;
-        }
-
-        @media (max-width: 600px) {
-            .Box {
-                width: 90%;
-                margin-left: 0;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="Box">
-        <img src="imag.jpeg">
-        <h1>LOGIN HERE</h1>
-
-        <form method="GET" action="/auth">
-            <button name="button" type="submit" value="2" class="button1">Login</button>
-        </form>
-        <form method="GET" action="/register">
-            <button name="button" type="submit" value="2" class="button1">Register</button>
-        </form>
-        <img src="https://www.coe.int/documents/9696056/22469668/Facial+recognition_870-489.jpg/c7e65175-dbf7-839d-862a-f658a0eef118?t=1611767224000" class="logo">
-    </div>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML Project - Login & Register</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: url('{{ url_for("static", filename="varun.jpg") }}');
-            background-size: cover;
-            color: white;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Double Authentication</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+    }
 
-        .divider {
-            background: rgba(255, 255, 255, 0.2);
-            animation: glow 2s infinite alternate;
-            width: 2px;
-        }
+    /* Main container */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      background: linear-gradient(135deg, #2b5876, #4e4376);/* Green success-themed gradient */
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
 
-        @keyframes glow {
-            0% {
-                background: rgba(255, 255, 255, 0.2);
-            }
-            100% {
-                background: rgba(0, 200, 255, 0.8);
-            }
-        }
+    /* Left side - Login/Register buttons */
+    .left-side {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .btn-custom {
-            background: linear-gradient(90deg, rgba(0, 200, 255, 0.9), rgba(0, 150, 255, 0.7));
-            border: none;
-            color: white;
-            font-size: 20px;
-            padding: 15px 30px;
-            margin: 10px 0;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 150, 255, 0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    .left-side h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeInLeft 2s ease-in-out;
+      color: #ecf0f1; /* Light color for contrast */
+    }
 
-        .btn-custom:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(0, 150, 255, 0.8);
-        }
+    .button {
+        background: #2877df;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      margin: 15px;
+      width: 200px;
+    }
 
-        h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-            padding-bottom: 10px;
-            font-family: 'Georgia', serif;
-            color: #00c8ff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
+    .button:hover {
+      transform: scale(1.1);
+      background-color: #5fc3cc;
+    }
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: justify;
-            font-family: 'Roboto', sans-serif;
-            color: rgba(255, 255, 255, 0.9);
-        }
+    /* Right side - Project overview and main theme */
+    .right-side {
+      flex: 2;
+      text-align: center;
+      padding: 20px;
+      animation: fadeInRight 2s ease-in-out;
+      z-index: 0;
+    }
 
-        .container-custom {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-    </style>
+    .right-side h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: #fdbb2d; /* Golden yellow for attention */
+    }
+
+    .right-side p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #f1f1f1; /* Soft white for readability */
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #ffde03; /* Bright yellow for highlighted text */
+    }
+
+    /* Animations */
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .left-side, .right-side {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container-fluid container-custom">
-        <div class="row w-100">
-            <!-- Left Section -->
-            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
-                <!-- <button class="btn btn-custom" onclick="alert('Redirecting to Login')">Login</button>
-                <button class="btn btn-custom" onclick="alert('Redirecting to Register')">Register</button> 
-                -->
-                <a href="/auth" class="btn btn-custom">Login</a>
-                <a href="/register" class="btn btn-custom">Register</a>
 
-            </div>
-
-            <!-- Divider -->
-            <div class="col-12 col-md-1 d-none d-md-block px-0">
-                <div class="divider h-100"></div>
-            </div>
-
-            <!-- Right Section -->
-            <div class="col-12 col-md-7 d-flex flex-column justify-content-center px-4">
-                <h1 class="text-center text-md-start">Project Overview</h1>
-                <p>This project is an advanced Machine Learning application that leverages facial recognition technology for secure user authentication. Users can register and log in by showing their face to the camera and performing a unique action of opening and closing their eyes five times. This ensures high-level security and prevents unauthorized access.</p>
-                <p>The application is designed to provide a seamless user experience, combining modern technology with an intuitive interface.</p>
-            </div>
-        </div>
+  <div class="container">
+    <!-- Left Side: Login/Register Buttons -->
+    <div class="left-side">
+      <h1>Welcome to Double Authentication</h1>
+      <button class="button" onclick="window.location.href='/auth'">Login</button>
+      <button class="button" onclick="window.location.href='/register'">Register</button>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Right Side: Project Overview and Main Theme -->
+    <div class="right-side">
+      <h2>Project Overview</h2>
+      <p>Experience the next level of <span class="highlight">security</span> with our Double Authentication system. Our system uses advanced face recognition followed by a <span class="highlight">unique eye blink password</span> for maximum protection.</p>
+      <p>This project combines <span class="highlight">biometric security</span> and user behavior recognition to enhance your login experience.</p>
+    </div>
+  </div>
+
 </body>
 </html>

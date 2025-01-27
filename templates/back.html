@@ -1,71 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication Failed</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Main container */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #2c3e50, #2980b9); /* Professional dark blue gradient */
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Message Box */
+    .message-box {
+      background: rgba(44, 62, 80, 0.85); /* Slightly transparent background to match the gradient */
+      padding: 40px 60px; /* Adjusted padding for a medium-sized look */
+      border-radius: 20px; /* Medium border radius */
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 1.5s ease-out, scaleUp 0.5s ease-in-out;
+      width: 90%; /* Make it responsive */
+      max-width: 500px; /* Set a maximum width for medium size */
+    }
+
+    .message-box h1 {
+      font-size: 2.8rem; /* Medium font size for heading */
+      margin-bottom: 15px;
+      color: #f59b91; /* Added a red font color for the heading */
+      animation: slideInTop 1s ease-out;
+    }
+
+    .message-box p {
+      font-size: 1.3rem; /* Medium font size for text */
+      color: #bdc3c7;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .button {
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      padding: 10px 20px; /* Smaller padding for the buttons */
+      font-size: 1rem; /* Reduced font size for the button */
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      margin: 10px;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      background-color: #d35400;
+    }
+
+    .button:focus {
+      outline: none;
+    }
+
+    /* Button container */
+    .button-container {
+      display: flex;
+      justify-content: center; /* Align buttons horizontally */
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInTop {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleUp {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      .message-box {
+        width: 100%;
+        padding: 25px 35px;
+      }
+
+      .button {
+        width: 150px;
+      }
+    }
+  </style>
 </head>
-<style>
-body{
-padding:0;
-margin:0;
-color:#fff;
-background:linear-gradient(90deg,#3e32a8,#e310c7);
-background-size:cover;
-background-position:relative;
-}
-
-.button1{
-margin-top:70%;
-border:none;
-outline:none;
-height:40px;
-background:rgba(0,0,0,0.4);
-color:#fff;
-font-size:18px;
-border-radius:20px;
-width:100%;
-cursor:pointer;
-
-}
-.button1:hover{
-box-shadow:0 5px 50px 0 #e310c7 inset, 0 2px 20px 0 #3e32a8,0 2px 20px 0 #3e32a8 inset, 0 5px 20px 0 #3e32a8;
-
-
-}
-
-.Box{
-width:300px;
-height:400px;
-padding:20px;
-background:rgba(0,0,0,0.4);
-color:#fff;
-top:50%;
-left:50%;
-position:absolute;
-transform:translate(-50%,-50%);
-box-sizing:border-box;
-}
-.try{
-width:200px;
-height:150px;
-border-radius:10%;
-position:absolute;
-margin-left:30px;
-margin-top:20px;
-}
-
-
-</style>
 <body>
-<h1 align="center">ENTERED CREDENTIALS WERE WRONG!</h1>
-<div class="Box">
-<img src="https://ichef.bbci.co.uk/images/ic/640x360/p06kykq2.jpg" class ="try">
-<br>
-<form method="GET" action="/auth">
-<div align="center">
-        <button name="button" type="submit" value="2" class="button1">TRY AGAIN </button>  </div>
 
-</form>
-</div>
+  <div class="container">
+    <div class="message-box">
+      <h1>Authentication Failed</h1>
+      <p>Sorry, something went wrong during the authentication process. Please check your credentials and try again.</p>
+      <div class="button-container">
+        <button class="button" onclick="window.location.href='/auth'">Try Again</button>
+        <button class="button" onclick="window.location.href='/home'">Back</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
