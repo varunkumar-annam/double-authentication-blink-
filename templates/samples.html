@@ -1,0 +1,290 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Double Authentication</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Main container */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      background: linear-gradient(135deg, #2c3e50, #34495e); /* Dark background */
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Left side - Login/Register buttons */
+    .left-side {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .left-side h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: fadeInLeft 2s ease-in-out;
+      color: #ecf0f1; /* Light text color */
+    }
+
+    .button {
+      background-color: #ff61a6;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      margin: 15px;
+      width: 200px;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      background-color: #ff3b82;
+    }
+
+    /* Right side - Project overview and main theme */
+    .right-side {
+      flex: 2;
+      text-align: center;
+      padding: 20px;
+      animation: fadeInRight 2s ease-in-out;
+      z-index: 0;
+    }
+
+    .right-side h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #f39c12; /* Bright yellow for contrast */
+    }
+
+    .right-side p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #bdc3c7; /* Lighter gray for text */
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #ffde03; /* Bright yellow for highlighted text */
+    }
+
+    /* Animations */
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .left-side, .right-side {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="left-side">
+      <h1>Welcome to Double Authentication</h1>
+      <button class="button" onclick="window.location.href='/login'">Login</button>
+      <button class="button" onclick="window.location.href='/register'">Register</button>
+    </div>
+
+    
+    <div class="right-side">
+      <h2>Project Overview</h2>
+      <p>Experience the next level of <span class="highlight">security</span> with our Double Authentication system. Our system uses advanced face recognition followed by a <span class="highlight">unique eye blink password</span> for maximum protection.</p>
+      <p>This project combines <span class="highlight">biometric security</span> and user behavior recognition to enhance your login experience.</p>
+    </div>
+  </div>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Double Authentication</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Main container */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      background: linear-gradient(135deg, #2b5876, #4e4376);/* Green success-themed gradient */
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Left side - Login/Register buttons */
+    .left-side {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .left-side h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeInLeft 2s ease-in-out;
+      color: #ecf0f1; /* Light color for contrast */
+    }
+
+    .button {
+        background: #2877df;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      margin: 15px;
+      width: 200px;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      background-color: #5fc3cc;
+    }
+
+    /* Right side - Project overview and main theme */
+    .right-side {
+      flex: 2;
+      text-align: center;
+      padding: 20px;
+      animation: fadeInRight 2s ease-in-out;
+      z-index: 0;
+    }
+
+    .right-side h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: #fdbb2d; /* Golden yellow for attention */
+    }
+
+    .right-side p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #f1f1f1; /* Soft white for readability */
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #ffde03; /* Bright yellow for highlighted text */
+    }
+
+    /* Animations */
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .left-side, .right-side {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+     
+    <div class="left-side">
+      <h1>Welcome to Double Authentication</h1>
+      <button class="button" onclick="window.location.href='/auth'">Login</button>
+      <button class="button" onclick="window.location.href='/register'">Register</button>
+    </div>
+
+    
+    <div class="right-side">
+      <h2>Project Overview</h2>
+      <p>Experience the next level of <span class="highlight">security</span> with our Double Authentication system. Our system uses advanced face recognition followed by a <span class="highlight">unique eye blink password</span> for maximum protection.</p>
+      <p>This project combines <span class="highlight">biometric security</span> and user behavior recognition to enhance your login experience.</p>
+    </div>
+  </div>
+
+</body>
+</html> -->

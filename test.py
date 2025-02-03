@@ -84,7 +84,9 @@ def train_data():
         Training_Data.append(np.asarray(images, dtype=np.uint8))
         Labels.append(i)
     Labels = np.asarray(Labels, dtype=np.int32)
-    model = cv2.face.LBPHFaceRecognizer_create()
+    #---------------------------------------------------------------
+    model = cv2.face.LBPHFaceRecognizer_create()  # model to recognize the face
+    #----------------------------------------------------------------
     model.train(np.asarray(Training_Data), np.asarray(Labels))
     return model
 
@@ -247,7 +249,7 @@ def register():
     # f.write(k)
     # f.close()
     flash("oops! something went wrong try again!")
-    return render_template('register.html')
+    return render_template('after_register.html')
 
 @app.route('/auth')
 def auth():
@@ -270,7 +272,7 @@ def auth():
 
 
 @app.route('/success', methods=['GET', 'POST'])
-def dash():
+def sucess():
         return render_template('auth_sucess.html')
 
 
